@@ -31,6 +31,11 @@ const (
 	clientConnUDPKeepalivePeriod = 30 * time.Second
 )
 
+//myAdd
+func (cc *ClientConn) ClearSender() {
+	cc.sender=nil
+}
+
 func clientChannelToTrackID(channel int) (int, StreamType) {
 	if (channel % 2) == 0 {
 		return channel / 2, StreamTypeRTP
